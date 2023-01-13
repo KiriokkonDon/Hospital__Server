@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+
 builder.Services.AddDbContext<ApplicationContext>(options =>
     options.UseNpgsql($"Host=localhost;Port=5432;Database=db;Username=postgres;Password=0023"));
 builder.Services.AddDbContext<ApplicationContext>(options =>
@@ -23,6 +23,7 @@ builder.Services.AddTransient<UserService>();
 builder.Services.AddTransient<DoctorService>();
 builder.Services.AddTransient<VisitService>();
 builder.Services.AddTransient<SheduleService>();
+builder.Services.AddTransient<SpecializationService>();
 
 var app = builder.Build();
 
@@ -34,9 +35,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
 
 app.UseAuthorization();
 
