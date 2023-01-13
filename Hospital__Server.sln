@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital__Server", "Hospital__Server\Hospital__Server.csproj", "{00D2210A-F525-4CE7-A27B-4ACC74EC6CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital__Server", "Hospital__Server\Hospital__Server.csproj", "{00D2210A-F525-4CE7-A27B-4ACC74EC6CBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital.Models", "Hospital.Models\Hospital.Models.csproj", "{136E1A83-8254-4B49-8004-190FFC49D726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital.Models", "Hospital.Models\Hospital.Models.csproj", "{136E1A83-8254-4B49-8004-190FFC49D726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital.Repositories", "Hospital.Repositories\Hospital.Repositories.csproj", "{5643AF60-0DBF-4392-AE8C-8C2B0FDBA3D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital.Repositories", "Hospital.Repositories\Hospital.Repositories.csproj", "{5643AF60-0DBF-4392-AE8C-8C2B0FDBA3D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hospital.Servise", "Hospital.Servise\Hospital.Servise.csproj", "{A31457C7-8B9E-40F9-AA2D-675ADE5401F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hospital.Servise", "Hospital.Servise\Hospital.Servise.csproj", "{A31457C7-8B9E-40F9-AA2D-675ADE5401F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{BD826980-2F1C-4025-8022-DC96D67B6F57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{BD826980-2F1C-4025-8022-DC96D67B6F57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{83A0243B-28A8-4EDA-83B9-51A65F2E8C4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BD826980-2F1C-4025-8022-DC96D67B6F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD826980-2F1C-4025-8022-DC96D67B6F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD826980-2F1C-4025-8022-DC96D67B6F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A0243B-28A8-4EDA-83B9-51A65F2E8C4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A0243B-28A8-4EDA-83B9-51A65F2E8C4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A0243B-28A8-4EDA-83B9-51A65F2E8C4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A0243B-28A8-4EDA-83B9-51A65F2E8C4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

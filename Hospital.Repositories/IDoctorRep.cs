@@ -13,9 +13,6 @@ namespace Hospital.Repositories
     {
         bool IsDoctorExist(int id);
         bool IsDoctorExist(Doctors doctor);
-        bool DeleteDoctor(Doctors doctor);
-        bool CreateDoctor(Doctors doctor);
-        IEnumerable<Doctors> GetAllDoctors();
         Doctors? GetDoctorById(int id);
         Doctors? GetDoctorBySpecialization(Specialization specialization);
 

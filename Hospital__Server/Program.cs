@@ -1,16 +1,36 @@
+using DB;
+using DB.Repositories;
+using Hospital.Repositories;
+using Hospital.Servise;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<ApplicationContext>(options =>
+    options.UseNpgsql($"Host=localhost;Port=5432;Database=db;Username=postgres;Password=0023"));
+builder.Services.AddDbContext<ApplicationContext>(options =>
+options.EnableSensitiveDataLogging(true));
+
+builder.Services.AddTransient<IUserRep, UserRepository>();
+builder.Services.AddTransient<IScheduleRep, SheduleRepository>();
+builder.Services.AddTransient<IVisitRep, VisitRepository>();
+builder.Services.AddTransient<IDoctorRep, DoctorRepository>();
+builder.Services.AddTransient<ISpecializationRep, SpecializationRepository>();
+builder.Services.AddTransient<UserService>();
+builder.Services.AddTransient<DoctorService>();
+builder.Services.AddTransient<VisitService>();
+builder.Services.AddTransient<SheduleService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
