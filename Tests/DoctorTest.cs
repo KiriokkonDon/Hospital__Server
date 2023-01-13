@@ -24,7 +24,7 @@ namespace Tests
         [Fact]
         public void GetAll()
         {
-            var res = _doctorService.GetAllDoctors();
+            var res = _doctorService.GetAll();
 
             Assert.True(!res.IsFailure);
         }
@@ -62,9 +62,9 @@ namespace Tests
                  new Doctors(0, "dsds", new Specialization(0, "sdsd"))
             };
             IEnumerable<Doctors> d = doctors;
-            _doctorRepMock.Setup(repository => repository.GetAllDoctors()).Returns(() => d);
+            _doctorRepMock.Setup(repository => repository.GetAll()).Returns(() => d);
 
-            var result = _doctorService.GetAllDoctors();
+            var result = _doctorService.GetAll();
 
             Assert.True(result.Success);
         }
@@ -74,8 +74,8 @@ namespace Tests
 
         public void ErrorDeleting_ShouldFail()
         {
-            _doctorRepMock.Setup(repository => repository.GetDoctorById(It.IsAny<int>())).Returns(() => new Doctors(0, "cwercqwe", new Specialization(0, "a")));
-            _doctorRepMock.Setup(repository => repository.DeleteDoctor(It.IsAny<Doctors>())).Returns(() => false);
+            _doctorRepMock.Setup(repository => repository.GetDoctorById(It.IsAny<int>())).Returns(() => new Doctors(0, "dfdfdf", new Specialization(0, "a")));
+            _doctorRepMock.Setup(repository => repository.Delete(It.IsAny<Doctors>())).Returns(() => false);
 
             var res = _doctorService.DeleteDoctor(new Doctors());
 

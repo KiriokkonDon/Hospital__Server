@@ -9,10 +9,9 @@ namespace Hospital.Repositories
     public interface IRep<T> where T : class
     {
         IEnumerable<T> GetAll();
-        T Get(int id);
         bool Create(T item);
         bool Update(T item);
-        bool Delete(int id);
+        bool Delete(T item);
         void Save();
     }
 }

@@ -69,11 +69,11 @@ namespace Hospital.Servise
                 return Result.Fail<Doctors>("There is no such doctor");
             }
 
-            return _db.DeleteDoctor(doctor) ? res : Result.Fail<Doctors>("Error while deleting.Try again later");
+            return _db.Delete(doctor) ? res : Result.Fail<Doctors>("Error while deleting.Try again later");
         }
-        public Result<IEnumerable<Doctors>> GetAllDoctors()
+        public Result<IEnumerable<Doctors>> GetAll()
         {
-            var doctors = _db.GetAllDoctors();
+            var doctors = _db.GetAll();
             return doctors != null ? Result.Ok(doctors) : Result.Fail<IEnumerable<Doctors>>("No doctors");
         }
 
