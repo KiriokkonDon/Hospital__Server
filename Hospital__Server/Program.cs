@@ -24,6 +24,10 @@ builder.Services.AddTransient<DoctorService>();
 builder.Services.AddTransient<VisitService>();
 builder.Services.AddTransient<SheduleService>();
 builder.Services.AddTransient<SpecializationService>();
+builder.Services.AddControllers();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -38,6 +42,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapRazorPages();
+
+app.MapControllers();
 
 app.Run();
