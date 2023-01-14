@@ -21,7 +21,7 @@ namespace Hospital__Server.Controllers
         public ActionResult IsUserExists(string login)
         {
             if (login == string.Empty)
-                return Problem(statusCode: 404, detail: "Не указан login");
+                return Problem(statusCode: 404, detail: "Error login");
 
             var res = _service.IsUserExists(login);
             if (res.IsFailure)
@@ -30,21 +30,21 @@ namespace Hospital__Server.Controllers
             return Ok(new { IsExists = res.Value });
         }
 
-        [HttpGet("login/{login}")]
+        [HttpGet("login_user")]
         public ActionResult<UserSearchView> GetUserByLogin(string login)
         {
 
             if (login == string.Empty)
-                return Problem(statusCode: 404, detail: "Не указан логин");
+                return Problem(statusCode: 404, detail: "Error login");
 
-            var userRes = _service.GetUserByLogin(login);
-            if (userRes.IsFailure)
-                return Problem(statusCode: 404, detail: userRes.Error);
+            var res = _service.GetUserByLogin(login);
+            if (res.IsFailure)
+                return Problem(statusCode: 404, detail: res.Error);
 
             return Ok(new UserSearchView
             {
-                Id = userRes.Value.Id,
-                Login = userRes.Value.Name,
+                Id = res.Value.Id,
+                Login = res.Value.Name,
             });
         }
 
